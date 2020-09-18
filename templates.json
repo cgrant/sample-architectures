@@ -1,6 +1,6 @@
 [
-    {"Name": "Simple", "Clusters": 2, "ACM": true, "SCM": "Github", "Path": ".."},
-    {"Name": "Simple Multicluster", "Clusters": 2, "ACM": true, "SCM": "Github", "Path": "foundation"},
-    {"Name": "Platform Demo", "Clusters": 4, "ACM": true, "SCM": "Gitlab (installed)", "Path": ".."},
-    {"Name": "Multicloud Workshop", "Clusters": 6, "ACM": false, "SCM": "Gitlab (installed)", "Path": ".."}
+    {"Name": "Simple", "Clusters": 2, "ACM": true, "SCM": "Github", "Repo": {"Url":"", "Branch":"","Path": ".."}},
+    {"Name": "Simple Multicluster", "Clusters": 2, "ACM": true, "SCM": "Github", "Repo": {"Url":"", "Branch":"","Path": "foundation"}},
+    {"Name": "Platform Demo", "Clusters": 4, "ACM": true, "SCM": "Gitlab (installed)",  "Repo": {"Url":"", "Branch":"","Path": ".."}},
+    {"Name": "Multicloud Workshop", "Clusters": 6, "ACM": false, "SCM": "Gitlab (installed)", "Repo": {"Url":"", "Branch":"","Path": ".."}}
 ]
