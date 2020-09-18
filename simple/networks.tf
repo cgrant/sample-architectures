@@ -14,10 +14,7 @@
  * limitations under the License.
  */
 
-provider "google" {
-  version = "~> 2.17.0"
-  project = var.project_id
-}
+
 
 resource "google_compute_network" "anthos-platform" {
   name                    = "anthos-platform"

@@ -28,9 +28,7 @@ provider "google-beta" {
   version = "~> 3.29.0"
 }
 
-data "google_compute_network" "anthos-platform" {
-  name = "anthos-platform"
-}
+
 
 
 module "anthos-platform-dev" {
@@ -38,8 +36,8 @@ module "anthos-platform-dev" {
   project_id        = var.project_id
   name              = "dev-us-west1"
   region            = "us-west1"
-  network           = data.google_compute_network.anthos-platform.name
-  subnetwork        = data.google_compute_subnetwork.anthos-platform-west1.name
+  network           = google_compute_network.anthos-platform.name
+  subnetwork        = google_compute_subnetwork.anthos-platform-west1.name
   ip_range_pods     = "anthos-platform-pods-dev"
   ip_range_services = "anthos-platform-services-dev"
   release_channel   = "STABLE"
