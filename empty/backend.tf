@@ -16,7 +16,7 @@
 
 terraform {
   backend "gcs" {
-    bucket = "YOUR_PROJECT_ID-anthos-platform-tf-state"
+    bucket = "crg-gcp-anthos-platform-tf-state"
     prefix = "foundation"
   }
 }

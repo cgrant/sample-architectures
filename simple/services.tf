@@ -16,7 +16,7 @@
 
 module "project-services" {
   source  = "terraform-google-modules/project-factory/google//modules/project_services"
-  version = "~> 8.0"
+
 
   project_id = var.project_id
 
@@ -28,9 +28,8 @@ module "project-services" {
     "compute.googleapis.com",
     "container.googleapis.com",
     "cloudresourcemanager.googleapis.com",
-    "sqladmin.googleapis.com",
     "artifactregistry.googleapis.com",
     "gkehub.googleapis.com",
-    "multiclusteringress.googleapis.com"    
+  
   ]
 }

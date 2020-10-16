@@ -12,23 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-timeout: 3600s # 1-hr
 tags:
   - modern-cicd-anthos
-  - modern-cicd-foundation
-substitutions:
-  _PROJECT_ID: ${PROJECT_ID}
 steps:
-- name: 'gcr.io/${_PROJECT_ID}/anthos-platform-installer'
-  id: 'create-foundation'
-  entrypoint: 'bash'
+- name: 'gcr.io/kaniko-project/executor:latest'
+  id: 'build-installer-image'
   args:
-  - '-xe'
-  - '-c'
-  - |
-    sed -i "s/YOUR_PROJECT_ID/${_PROJECT_ID}/g" terraform.tfvars
-    sed -i "s/YOUR_PROJECT_ID/${_PROJECT_ID}/g" backend.tf
-
-    terraform init
-    terraform plan -out=terraform.tfplan
-    terraform apply -auto-approve terraform.tfplan
+  - --destination=gcr.io/${PROJECT_ID}/anthos-platform-installer
+  - --cache=true
+  - --cache-ttl=12h

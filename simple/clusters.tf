@@ -23,10 +23,7 @@ provider "google" {
   version = "~> 3.29.0"
 }
 
-provider "google-beta" {
-  project = var.project_id
-  version = "~> 3.29.0"
-}
+
 
 
 
